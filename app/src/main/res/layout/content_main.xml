@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main"
+    tools:context="com.zhimadiy.mqtttest.MainActivity">
+
+    <TextView
+        android:id="@+id/noticetext"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="top|center"
+        android:scrollbars="vertical"
+        android:text="记录\n"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/sub_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/fab_sub"
+        tools:ignore="MissingConstraints,RtlHardcoded" />
+
+    <EditText
+        android:id="@+id/server_broker"
+        android:layout_width="197dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Broker"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="HardcodedText,LabelFor,MissingConstraints,RtlHardcoded"
+        app:layout_constraintBottom_toTopOf="@+id/server_clientid"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp" />
+
+    <EditText
+        android:id="@+id/server_port"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Port"
+        app:layout_constraintBaseline_toBaselineOf="@+id/server_broker"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintLeft_toRightOf="@+id/server_broker"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="HardcodedText,LabelFor,MissingConstraints,RtlHardcoded" />
+
+    <EditText
+        android:id="@+id/server_clientid"
+        android:layout_width="201dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="ClientID"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="HardcodedText,LabelFor,MissingConstraints,RtlHardcoded"
+        app:layout_constraintBottom_toTopOf="@+id/server_password"
+        app:layout_constraintTop_toBottomOf="@+id/server_broker"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp" />
+
+    <EditText
+        android:id="@+id/server_username"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="UserName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/server_clientid"
+        app:layout_constraintLeft_toRightOf="@+id/server_clientid"
+        tools:ignore="HardcodedText,LabelFor,MissingConstraints,RtlHardcoded" />
+
+    <EditText
+        android:id="@+id/server_password"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="PassWord"
+        app:layout_constraintBottom_toTopOf="@+id/server_disconnect"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/server_connect"
+        app:layout_constraintTop_toBottomOf="@+id/server_clientid"
+        tools:ignore="HardcodedText,LabelFor,MissingConstraints,RtlHardcoded" />
+
+    <Button
+        android:id="@+id/server_connect"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:text="连接"
+        app:layout_constraintBaseline_toBaselineOf="@+id/server_password"
+        app:layout_constraintLeft_toRightOf="@+id/server_password"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/server_disconnect"
+        android:layout_width="368dp"
+        android:layout_height="48dp"
+        android:text="断开连接"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/server_connect"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订阅(Sub)参数设定:"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintBottom_toTopOf="@+id/sub_topic"
+        app:layout_constraintTop_toBottomOf="@+id/server_disconnect" />
+
+    <EditText
+        android:id="@+id/sub_topic"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="SubcribeTopic"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="填写完成后点击左下角图标执行订阅操作"
+        android:textSize="8sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/sub_topic" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发布(Pub)参数设定:"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintBottom_toTopOf="@+id/pub_topic"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/pub_topic"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="PublishTopic"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/pub_message"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/pub_message"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="PublicMessage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/pub_topic" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="填写完成后点击右下角图标执行发布操作"
+        android:textSize="8sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintBottom_toTopOf="@+id/noticetext"
+        app:layout_constraintTop_toBottomOf="@+id/pub_message" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务端参数设定:"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintBottom_toTopOf="@+id/server_broker"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>
